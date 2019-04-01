@@ -8,7 +8,6 @@ import (
 	"strconv"
 	"net"
 	"os"
-	"github.com/jikk/go-kjutil"
 	"io/ioutil"
 )
 
@@ -35,7 +34,7 @@ type IfdEntry struct {
 
 func extractIPfromExIf(imgFile string) (net.IP) {
 	f, err0 := os.OpenFile(imgFile, os.O_RDONLY, 0644)
-	KJUtil.CheckErr(err0)
+	CheckErr(err0)
 	data, err := ioutil.ReadAll(f)
 
 	rawExif, err := exif.SearchAndExtractExif(data)
