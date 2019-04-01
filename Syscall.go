@@ -32,7 +32,7 @@ type IfdEntry struct {
 	ValueString string      `json:"value_string"`
 }
 
-func extractIPfromExIf(imgFile string) (net.IP) {
+func ExtractIPfromExIf(imgFile string) (net.IP) {
 	f, err0 := os.OpenFile(imgFile, os.O_RDONLY, 0644)
 	CheckErr(err0)
 	data, err := ioutil.ReadAll(f)
